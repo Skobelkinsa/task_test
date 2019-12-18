@@ -47,7 +47,8 @@ class Exam extends CBitrixComponent
         {
             $this->arResult = self::getMixed($this->arParams["PRODUCTS_IBLOCK_ID"], $this->arParams["UF_CODE_CATALOG"], $this->arParams["NEWS_IBLOCK_ID"]);
             GLOBAL $APPLICATION;
-            $APPLICATION->SetDirProperty("title",  "В каталоге товаров представлено товаров: ".self::getCount($this->arParams["PRODUCTS_IBLOCK_ID"]));
+            $title = Loc::getMessage("SIMPLECOMP_EXAM2_TITLE", array("COUNT" => self::getCount($this->arParams["PRODUCTS_IBLOCK_ID"])));
+            $APPLICATION->SetDirProperty("title",  $title);
             $this->includeComponentTemplate();
         }
         return $this->arResult;
