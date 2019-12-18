@@ -41,6 +41,12 @@ class Exam extends CBitrixComponent
         );
     }
 
+    /**
+     * @return array|mixed
+     * @throws SystemException
+     * @throws \Bitrix\Main\ArgumentException
+     * @throws \Bitrix\Main\ObjectPropertyException
+     */
     public function executeComponent()
     {
         if($this->startResultCache())
